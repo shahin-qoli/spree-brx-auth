@@ -12,7 +12,8 @@ module Devise
         # 1. The password and the OTP are correct
         # 2. The password is correct, and OTP is not required for login
         # We check the OTP, then defer to DatabaseAuthenticatable
-        if params[scope]['otp_attempt'].empty?
+        #if params[scope]['otp_attempt'].empty?
+        if !params[scope].has_key?('otp_attempt')
 
         #if validate(resource) { validate_otp(resource) }
           super
